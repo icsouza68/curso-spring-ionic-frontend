@@ -41,12 +41,17 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    this.auth.refreshToken()
-      .subscribe(response => {
-        this.auth.successfulLogin(response.headers.get('Authorization'));
-        this.navCtrl.setRoot('CategoriasPage');
-      },
-      error => {});
+    if (this.creds.email) {
+      this.auth.refreshToken()
+        .subscribe(response => {
+          this.auth.successfulLogin(response.headers.get('Authorization'));
+          this.navCtrl.setRoot('CategoriasPage');
+        },
+        error => {});
+    }
+  }
 
+  signup() {
+    this.navCtrl.push('SignupPage');
   }
 }
