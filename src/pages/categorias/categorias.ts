@@ -44,7 +44,11 @@ export class CategoriasPage {
     error => {});
   }
 
-  showProdutos() {
-    this.navCtrl.push('ProdutosPage');
+  showProdutos(categoria_id : string) {
+    // Vai chamar uma outra página passando um parâmetro, que é o codigo da categoria
+    // Notar que no objeto {} do parâmetro, o primeiro categoria_id é só uma variável, 
+    // poderia ter um outro nome, mas o segundo categoria_id é o parâmetro que chega na
+    // função showProdutos
+    this.navCtrl.push('ProdutosPage', {categoria_id: categoria_id});
   }
 }
