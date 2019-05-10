@@ -27,8 +27,8 @@ export class SignupPage {
 
       // o formgroup vai validar os campos: validações básicas
       this.formGroup = this.formBuilder.group({
-        nome: ['Joaquim', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
-        email: ['joaquim.gmail.com', [Validators.required, Validators.email]],
+        nome: ['Joaquim', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
+        email: ['joaquim@gmail.com', [Validators.required, Validators.email]],
         tipo : ['1', [Validators.required]],
         cpfOuCnpj : ['06134596280', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
         senha : ['123', [Validators.required]],
