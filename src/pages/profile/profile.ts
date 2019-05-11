@@ -24,9 +24,10 @@ export class ProfilePage {
   ionViewDidLoad() {
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
+      // a sintaxe ...response as ClienteDTO é um cast para evitar alerta do compilador
       this.clienteService.findByEmail(localUser.email)
         .subscribe(response => {
-          this.cliente = response;
+          this.cliente = response as ClienteDTO;
           this.getImageIfExists();
         },
         error => {
