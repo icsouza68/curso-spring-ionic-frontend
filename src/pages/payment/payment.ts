@@ -34,6 +34,6 @@ export class PaymentPage {
       this.formGroup.value["numeroDeParcelas"] = 1;
     }
     this.pedido.pagamento = this.formGroup.value;
-    console.log(this.pedido);
+    this.navCtrl.setRoot('OrderConfirmationPage', {pedido: this.pedido});
   }
 }
